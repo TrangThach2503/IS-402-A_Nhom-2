@@ -1,4 +1,4 @@
-# SalesDSS - Hệ Thống Hỗ Trợ Ra Quyết Định Bán Lẻ
+# SalesDSS Frontend - Hệ Thống Hỗ Trợ Ra Quyết Định Bán Lẻ
 ### Chuỗi Tiện Lợi WinMart & WinMart+ Đà Nẵng (Masan WinCommerce)
 **Học phần:** IS402 - Phát Triển Hệ Thống Thông Tin Doanh Nghiệp | **Nhóm thực hiện:** Nhóm 2
 
@@ -6,77 +6,53 @@
 
 ## 📌 Giới Thiệu Dự Án
 
-**SalesDSS** là hệ thống hỗ trợ ra quyết định thông minh (Decision Support System - DSS) được thiết kế chuyên biệt cho Ban Giám đốc Kinh doanh và Chuyên viên Kế hoạch thuộc chuỗi bán lẻ **WinMart & WinMart+ tại khu vực Thành phố Đà Nẵng** (bao gồm 32 điểm bán: 2 siêu thị WinMart và 30 cửa hàng tiện lợi WinMart+ trải rộng tại Hải Châu, Thanh Khê, Sơn Trà, Ngũ Hành Sơn, Liên Chiểu, Cẩm Lệ).
+Ứng dụng Web **SalesDSS** (Frontend) là giao diện hỗ trợ ra quyết định thông minh phục vụ Ban Giám đốc Kinh doanh và Chuyên viên Kế hoạch của chuỗi **WinMart & WinMart+ tại khu vực Thành phố Đà Nẵng** (32 điểm bán: 2 siêu thị WinMart và 30 cửa hàng tiện lợi WinMart+).
 
-Hệ thống được phát triển bám sát chu trình ra quyết định 4 giai đoạn chuẩn của **Herbert Simon**:
+Giao diện được thiết kế chuẩn mực theo mô hình chu trình quyết định 4 giai đoạn của **Herbert Simon**:
 
-```
-[ Intelligence (Trí tuệ) ] ➔ [ Design (Thiết kế) ] ➔ [ Choice (Lựa chọn) ] ➔ [ Implementation (Thực thi) ]
-   Bảng điều khiển kinh doanh     Xưởng dự báo AI Prophet       Hộp cát mô phỏng What-If      Phân bổ & Phê duyệt Quota
-```
+1. **Trí Tuệ (Intelligence) - Bảng Điều Khiển Kinh Doanh:**
+   * Theo dõi doanh thu thực tế, biên lợi nhuận gộp, tỷ lệ đạt kế hoạch 32 điểm bán WinMart Đà Nẵng.
+   * Bản đồ nhiệt hiệu suất theo quận huyện (Hải Châu, Sơn Trà, Thanh Khê, Ngũ Hành Sơn...).
+   * Phân tích cơ cấu ngành hàng và đối chiếu phương sai Waterfall.
 
----
+2. **Thiết Kế (Design) - Xưởng Dự Báo Chuỗi Thời Gian AI (AI Prophet Hub):**
+   * Dự báo xu hướng chuỗi thời gian 30 ngày tiếp theo kèm dải tin cậy 95% (Upper/Lower Bound).
+   * Đo lường sai số dự báo MAPE tối ưu ($4.18\%$).
 
-## 🚀 Các Tính Năng & Phân Hệ Cốt Lõi
+3. **Lựa Chọn (Choice) - Hộp Cát Mô Phỏng What-If (What-If Sandbox):**
+   * Thanh trượt giả lập đa kịch bản nhạy cảm: Chiết khấu khuyến mại, Ngân sách tiếp thị O2O, Giá vốn nhà cung cấp, Mùa du lịch Đà Nẵng.
+   * Ma trận so sánh 3 kịch bản: Thận Trọng (Conservative), Cơ Sở (Base-Case), và Tăng Tốc (Aggressive).
 
-1. **Giai đoạn Trí Tuệ (Intelligence) - Bảng Điều Khiển Kinh Doanh:**
-   * Theo dõi doanh thu thực tế, biên lợi nhuận gộp, lưu lượng khách hàng và tỷ lệ đạt kế hoạch 32 điểm bán WinMart Đà Nẵng.
-   * Bản đồ nhiệt hiệu suất theo quận huyện (Hải Châu, Sơn Trà, Thanh Khê...) và cơ cấu doanh thu theo ngành hàng (Thực phẩm tươi sống MeatDeli/WinEco, FMCG, Bách hóa...).
-   * Bộ lọc dữ liệu đa chiều, nạp dữ liệu POS/ERP thực tế.
+4. **Thực Thi (Implementation) - Phân Bổ Chỉ Tiêu Quota & Phê Duyệt Kế Hoạch:**
+   * Thuật toán phân bổ quota doanh số xuống từng cửa hàng và nhân sự phụ trách.
+   * Luồng phê duyệt số ký quỹ hạn ngạch có phân quyền vai trò.
 
-2. **Giai đoạn Thiết Kế (Design) - Xưởng Dự Báo Chuỗi Thời Gian AI (AI Prophet Hub):**
-   * Tích hợp thuật toán học máy phân tích xu hướng dài hạn, tính chu kỳ tuần/tháng và các điểm dị biệt (lễ hội, thời tiết mùa du lịch Đà Nẵng).
-   * Dự báo doanh thu 30 ngày tiếp theo kèm dải tin cậy 95% (Upper / Lower Bound) và chỉ số sai số MAPE tối ưu ($4.18\%$).
-
-3. **Giai đoạn Lựa Chọn (Choice) - Hộp Cát Mô Phỏng What-If (What-If Sandbox):**
-   * Thanh trượt giả lập đa biến số nhạy cảm: Tỷ lệ chiết khấu khuyến mại, Ngân sách tiếp thị O2O, Biến động giá vốn nhà cung cấp, và Dự báo sức mua mùa du lịch Đà Nẵng.
-   * Ma trận so sánh 3 kịch bản: **Thận Trọng (Conservative)**, **Cơ Sở (Base-Case)**, và **Tăng Tốc (Aggressive)**.
-
-4. **Giai đoạn Thực Thi (Implementation) - Phân Bổ Chỉ Tiêu Quota & Phê Duyệt Kế Hoạch:**
-   * Cơ chế thuật toán phân bổ quota doanh số xuống từng cửa hàng dựa trên tỷ trọng đóng góp lịch sử, tiềm năng tăng trưởng và chỉ số diện tích mặt sàn/vị trí.
-   * Quy trình phê duyệt số ký quỹ hạn ngạch có xác thực bảo mật và phân quyền vai trò (Sales Director vs. Planning Analyst).
-
-5. **Bảo Mật & Xác Thực Tài Khoản Đa Lớp:**
-   * Đăng nhập phân quyền chuyên biệt (Giám đốc kinh doanh / Chuyên viên kế hoạch).
-   * Cơ chế **Cấp lại mật khẩu qua OTP 6 số**: Tích hợp Backend FastAPI gửi mã xác thực trực tiếp qua dịch vụ Google SMTP (`smtp.gmail.com:587`) đến hộp thư cá nhân, kèm chế độ xem trước mã trực tiếp cho người kiểm thử.
+5. **Xác Thực Đa Lớp & Cấp Lại Mật Khẩu Qua OTP:**
+   * Phân quyền người dùng (Sales Director / Planning Analyst).
+   * Quy trình khôi phục mật khẩu xác thực mã OTP 6 số bảo mật.
 
 ---
 
-## 🛠 Kiến Trúc Công Nghệ
+## 🛠 Công Nghệ Sử Dụng (Frontend)
 
-* **Giao diện người dùng (Frontend):**
-  * React 18, Vite
-  * Tailwind CSS, Lucide React Icons
-  * Thiết kế thích ứng (Responsive), hiệu ứng Glassmorphism & Micro-animations
-* **Xử lý phía sau (Backend API):**
-  * Python 3, FastAPI, Uvicorn
-  * Thư viện gửi email bảo mật `smtplib`, `email.mime`
-  * CORS Middleware, Pydantic Data Models
+* **Framework:** React 18, Vite
+* **Styling & Icons:** Tailwind CSS, Lucide React Icons
+* **Kiến trúc:** Component-based, SPA (Single Page Application)
+* **Giao diện:** Pastel Modern, Glassmorphism, Micro-animations
 
 ---
 
-## 💻 Hướng Dẫn Cài Đặt & Chạy Cục Bộ (Local Development)
+## 💻 Hướng Dẫn Cài Đặt & Chạy Cục Bộ
 
-### 1. Khởi chạy Giao diện (Frontend)
 ```bash
+# 1. Di chuyển vào thư mục frontend
 cd frontend
+
+# 2. Cài đặt các thư viện phụ thuộc
 npm install
+
+# 3. Khởi chạy máy chủ phát triển
 npm run dev
 ```
-Trang web sẽ hoạt động tại: **`http://localhost:5173/`**
 
-### 2. Khởi chạy Máy chủ API (Backend)
-```bash
-cd backend
-pip install fastapi uvicorn pydantic python-dotenv requests
-python -m uvicorn main:app --host 0.0.0.0 --port 8008 --reload
-```
-API Documentation (Swagger UI) có sẵn tại: **`http://localhost:8008/docs`**
-
-*(Tùy chọn) Để gửi email thật về Gmail:* Sao chép và cấu hình tệp `backend/.env` với email và Mật khẩu ứng dụng Google (App Password).
-
----
-
-## 👥 Thành Viên Nhóm Thực Hiện
-* **Nhóm 2 - IS402.A**
-* Dự án kết thúc môn Hệ Thống Thông Tin Doanh Nghiệp (IS402).
+Ứng dụng sẽ hoạt động tại: **`http://localhost:5173/`**
