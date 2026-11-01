@@ -1,0 +1,293 @@
+P4 [style=Normal]: Khoa Công Nghệ Thông Tin
+P6 [style=Normal]: Software Requirements Specification (SRS) Document
+P7 [style=Normal]: Course: System Integration Practices
+P8 [style=Normal]: Project Title: Integrated HR & Payroll Dashboard System for Company X
+P9 [style=Normal]: Case Study 2, 3: System Requirement Analysis & API Design
+Version: 1.0
+Date: [Insert Date]
+P10 [style=Normal]: Group: [Enter Group Name / Group Number]
+Semester: [2 – 2024-2025]
+Instructor: MSc. Nguyen Dang Quang Huy
+Team Members:
+P11 [style=Normal]: Approved by 
+P12 [style=Normal]: MSc Huy, Nguyen Dang Quang
+P15 [style=Normal]: Da Nang 05/2025
+P21 [style=Normal]: DOCUMENT NAME
+P24 [style=Normal]: DOCUMENT APPROVALS
+P25 [style=Normal]: Document Approvals: The following signatures are required for approval of this document.
+P28 [style=Normal]: TABLE OF CONTENTS
+P30 [style=Heading 2]: 1. Introduction
+P31 [style=Heading 3]: 1.1 Purpose of the Document
+P32 [style=Normal (Web)]: Tài liệu SRS này được xây dựng nhằm mô tả chi tiết tất cả các yêu cầu của hệ thống Integrated HR & Payroll Dashboard System cho Công ty X.
+Nó là cơ sở cho việc phát triển, kiểm thử, và bảo trì hệ thống trong suốt vòng đời phần mềm.
+P33 [style=Normal (Web)]: Đối tượng sử dụng tài liệu gồm:
+P34 [style=Normal (Web)]: Khách hàng (Company X): hiểu rõ hệ thống đáp ứng nhu cầu quản lý nhân sự và lương.
+P35 [style=Normal (Web)]: Giảng viên hướng dẫn: dùng để theo dõi tiến độ và đánh giá kết quả học tập.
+P36 [style=Normal (Web)]: Nhóm phát triển (sinh viên): tham chiếu để thiết kế, lập trình, kiểm thử.
+P37 [style=Normal (Web)]: Nhóm kiểm thử: xây dựng và thực hiện test case dựa trên yêu cầu.
+P38 [style=Heading 3]: 1.2 Scope of the Document (Phạm vi tài liệu)
+P39 [style=Normal (Web)]: Tài liệu này bao gồm:
+P40 [style=Normal (Web)]: Mô tả chi tiết yêu cầu chức năng (FR) và phi chức năng (NFR).
+P41 [style=Normal (Web)]: Mô hình hệ thống gồm Use Case, Activity, Sequence, Class, và State Diagram.
+P42 [style=Normal (Web)]: Các quy tắc nghiệp vụ (Business Rules) và ràng buộc kỹ thuật.
+P43 [style=Normal (Web)]: Tài liệu không bao gồm:
+P44 [style=Normal (Web)]: Chi tiết cài đặt kỹ thuật, mã nguồn, hay hướng dẫn triển khai hệ thống thực tế.
+P45 [style=Heading 3]: 1.3 Definitions, Acronyms, Abbreviations
+P47 [style=Heading 3]: 1.4 References
+P48 [style=Normal (Web)]: IEEE Computer Society, IEEE Recommended Practice for Software Requirements Specifications (IEEE Std 830-1998), 1998.
+P49 [style=Normal (Web)]: CEO Memo – Company X (2025).
+P50 [style=Normal (Web)]: Business Requirement Document (BRD) – Group 3 (2025).
+P51 [style=Normal (Web)]: System Integration Practices Lecture Notes – MSc. Nguyen Dang Quang Huy (2025).
+P52 [style=Normal (Web)]: Designing Data-Intensive Applications – Martin Kleppmann, O’Reilly (2017).
+P53 [style=Heading 3]: 1.5 Overview
+P54 [style=Normal (Web)]: Chương 2: Mô tả tổng quan hệ thống.
+P55 [style=Normal (Web)]: Chương 3: Yêu cầu tổng quát và mô tả người dùng.
+P56 [style=Normal (Web)]: Chương 4: Yêu cầu cụ thể (FR & NFR).
+P57 [style=Normal (Web)]: Chương 5: Mô hình hệ thống UML.
+P58 [style=Normal (Web)]: Chương 6: Quy tắc nghiệp vụ và ràng buộc.
+P59 [style=Normal (Web)]: Chương 7: Giao diện mẫu (Prototype).
+P60 [style=Heading 2]: 2. Overall Description
+P61 [style=Heading 3]: 2.1 Purpose of the System (Mục đích dự án/hệ thống)
+P62 [style=Normal (Web)]: Mục đích của hệ thống Integrated HR & Payroll Dashboard là hỗ trợ Công ty X hợp nhất dữ liệu nhân sự (HUMAN_2025 – SQL Server) và dữ liệu bảng lương (PAYROLL – MySQL) thành một nền tảng thống nhất.
+Hệ thống giúp:
+P63 [style=Normal (Web)]: Quản lý nhân viên, phòng ban, lương, và chấm công.
+P64 [style=Normal (Web)]: Tự động đồng bộ dữ liệu giữa hai cơ sở dữ liệu.
+P65 [style=Normal (Web)]: Hiển thị báo cáo và cảnh báo thông minh cho nhà quản lý.
+P66 [style=Heading 3]: 2.2 Scope of the System (Phạm vi hệ thống)
+P67 [style=Normal (Web)]: Hệ thống HR & Payroll Dashboard sẽ cung cấp các chức năng chính:
+P68 [style=Normal (Web)]: Quản lý hồ sơ nhân viên.
+P69 [style=Normal (Web)]: Theo dõi chấm công và tính lương tự động.
+P70 [style=Normal (Web)]: Gửi cảnh báo về sinh nhật, kỷ niệm công tác, hợp đồng sắp hết hạn.
+P71 [style=Normal (Web)]: Tích hợp báo cáo trực quan (bảng, biểu đồ).
+P72 [style=Normal (Web)]: Hỗ trợ người dùng: Admin, HR Manager, Payroll Manager, Employee.
+P73 [style=Normal (Web)]: Phạm vi không bao gồm:
+P74 [style=Normal (Web)]: Tích hợp với hệ thống ERP hoặc các dịch vụ bên ngoài.
+P75 [style=Normal (Web)]: Tự động gửi thông báo qua SMS hoặc email.
+P76 [style=Heading 2]: 3. Overall Description
+P77 [style=Heading 3]: 3.1 Product Perspective (Bối cảnh sản phẩm)
+P78 [style=Normal (Web)]: Hệ thống là một ứng dụng web độc lập, kết nối đồng thời với hai cơ sở dữ liệu:
+P79 [style=Normal (Web)]: HUMAN_2025 (SQL Server): chứa dữ liệu nhân sự.
+P80 [style=Normal (Web)]: PAYROLL (MySQL): chứa dữ liệu lương và chấm công.
+P81 [style=Normal (Web)]: Hệ thống hoạt động như lớp tích hợp trung gian (middleware), sử dụng RESTful API để truyền tải dữ liệu giữa backend và frontend.
+P82 [style=Heading 3]: 3.2 System Context Diagram
+P83 [style=Normal]: Yêu cầu sinh viên vẽ sơ đồ Context Diagram (System, HR, Payroll, API, Users) bằng Draw.io cắt hình dán vào
+P84 [style=Heading 3]: 3.2 Product Functions (Chức năng sản phẩm)
+P85 [style=Normal (Web)]: Các chức năng chính bao gồm:
+P86 [style=Normal (Web)]: Đăng nhập và phân quyền người dùng.
+P87 [style=Normal (Web)]: Quản lý nhân viên
+P88 [style=Normal (Web)]: Quản lý phòng ban và chức vụ.
+P89 [style=Normal (Web)]: ….tiếp tục liệt kê các chức năng sản phẩm sau khi nhóm phân tích
+P90 [style=Heading 3]: 3.3 User Characteristics (Đặc điểm người dùng)
+P92 [style=Heading 3]: 3.4 Constraints (Ràng buộc)
+P93 [style=Normal]: <Liệt kê các rang buộc khi xây dựng hệ thống>
+P94 [style=Normal]: Ví dụ
+P95 [style=Normal (Web)]: Ứng dụng chạy trên web, hỗ trợ trình duyệt Chrome/Edge.
+P96 [style=Normal (Web)]: Tuân thủ chính sách bảo mật dữ liệu nhân sự.
+P97 [style=Heading 3]: 3.5 Assumptions and Dependencies
+P98 [style=Normal]: <liệt kê các Giả định và phụ thuộc>
+P99 [style=Normal]: Ví dụ:
+P100 [style=Normal (Web)]: Mỗi nhân viên có tài khoản email để đăng nhập và nhận thông báo.
+P101 [style=Normal (Web)]: Hệ thống phụ thuộc vào hai CSDL HUMAN_2025 và PAYROLL.
+P102 [style=Normal (Web)]: Internet kết nối ổn định giữa server và client.
+P103 [style=Heading 2]: 4. Specific Requirements
+P104 [style=Heading 3]: 4.1 Functional Requirements (Yêu cầu chức năng)
+P106 [style=Heading 3]: 4.2 Non-functional Requirements (Yêu cầu phi chức năng)
+P108 [style=Heading 3]: 4.3 External Interface Requirements
+P109 [style=Normal (Web)]: UI: Web responsive, có giao diện Dashboard, Employee List, Payroll, Reports.
+P110 [style=Normal (Web)]: DB:
+P111 [style=Normal (Web)]: SQL Server (HUMAN_2025).
+P112 [style=Normal (Web)]: MySQL (PAYROLL).
+P113 [style=Normal (Web)]: API: REST API trả dữ liệu JSON.
+P114 [style=Normal (Web)]: Bảo mật: SSL/TLS, xác thực JWT.
+P115 [style=Heading 2]: 5. System Models
+P116 [style=Heading 3]: 5.1 Business Function Diagram (BFD)
+P117 [style=Normal]: <Vẽ sơ đồ BFD>
+P118 [style=Heading 3]: 5.2 List of Use Case
+P119 [style=Normal]: <Liệt kê các use case>
+P121 [style=Heading 3]: 5.3 Use Case Diagram Overview
+P122 [style=Normal]: <Vẽ sơ đồ Use case diagram>
+P123 [style=Heading 3]: 5.4 Use Case Specification:
+P124 [style=Normal]: Đặc tả UC cho từng UC theo mẫu đã dạy
+P125 [style=Heading 3]: Login Use Case
+P126 [style=Normal]: Sinh viên thực hiện đúng theo mẫu sau:
+P129 [style=Heading 3]: 5.5 Activity Diagram 
+P130 [style=Normal]: <Vẽ sơ đồ activity diagram cho từng chức năng>
+P131 [style=Heading 3]: 5.6 Sequence Diagram
+P132 [style=Normal]: <Vẽ sơ đồ Sequence diagram cho từng chức năng>
+P133 [style=Heading 3]: 5.7 Class Diagram
+P134 [style=Normal (Web)]: <Vẽ sơ đồ class diagram cho toàn bộ các lớp>
+P135 [style=Heading 2]: 6. Other Requirements
+P136 [style=Heading 3]: 6.1 Business Rules
+P137 [style=Normal]: Ví dụ
+P138 [style=Heading 3]: 6.2 System Constraints
+P139 [style=Normal]: <Liệt kê các ràng buộc khi xây dựng hệ thống>
+P140 [style=Normal]: Ví dụ
+P141 [style=Normal (Web)]: Ứng dụng web-based, chạy trên IIS hoặc Tomcat.
+P142 [style=Normal (Web)]: Hỗ trợ Windows Server và Linux Server.
+P143 [style=Normal (Web)]: ….
+P144 [style=Heading 3]: Appendix 
+P145 [style=Heading 3]: A: Glossary
+P146 [style=Heading 2]: Appendix B – Requirement Traceability Matrix 
+P147 [style=Normal]: Sinh viên tạo bảng BR → FR → API → Test Case
+P148 [style=Normal]: Ví dụ
+
+--- TABLES ---
+
+Table 0 (rows: 6, cols: 2):
+  Row 0: ['Name', 'Student ID']
+  Row 1: ['Hoang, Tran Thi Khai', '27205621505']
+  Row 2: ['Hung, Truong Thanh', '27211240268']
+  Row 3: ['Lich, Huynh Ngoc', '27211201526']
+  Row 4: ['Manh, Nguyen Tien', '27211238929']
+  Row 5: ['Sung, Quoc Hoang Lam', '27211200383']
+
+Table 1 (rows: 9, cols: 5):
+  Row 0: ['Project Acronym', 'HRD', 'HRD', 'HRD', 'HRD']
+  Row 1: ['Project Title', 'Company X – Integrated HR & Payroll Management Dashboard', 'Company X – Integrated HR & Payroll Management Dashboard', 'Company X – Integrated HR & Payroll Management Dashboard', 'Company X – Integrated HR & Payroll Management Dashboard']
+  Row 2: ['Start Date', '17 April 2024', 'End Date', '20 August 2024', '20 August 2024']
+  Row 3: ['Lead Institution', 'International School, Duy Tan University', 'International School, Duy Tan University', 'International School, Duy Tan University', 'International School, Duy Tan University']
+  Row 4: ['Role', 'Name', 'Email', 'Email', 'Phone']
+  Row 5: ['Project Mentor', 'Nguyen Dang Quang Huy', '', '', '']
+  Row 6: ['', 'Nguyen Thanh Nhan', 'hashayi147@gmail.com', 'hashayi147@gmail.com', '0379740995']
+  Row 7: ['', 'Phan Quang Tuan', 'tuanphana202@gmail.com', 'tuanphana202@gmail.com', '0866103702']
+  Row 8: ['', 'Tran Thi Thu Hong', 'Ttthuhong123@gmail.com', 'Ttthuhong123@gmail.com', '0833282777']
+
+Table 2 (rows: 5, cols: 4):
+  Row 0: ['Document Title', 'Software Requirements Specification (SRS)', 'Software Requirements Specification (SRS)', 'Software Requirements Specification (SRS)']
+  Row 1: ['Reporting Period', '17– April - 2024', '17– April - 2024', '17– April - 2024']
+  Row 2: ['Author(s)', 'Phan Quang Tuan Tran Thi Thu Hong Nguyen Thanh Nhan', 'Phan Quang Tuan Tran Thi Thu Hong Nguyen Thanh Nhan', 'Phan Quang Tuan Tran Thi Thu Hong Nguyen Thanh Nhan']
+  Row 3: ['Role', 'Developer', 'Developer', 'Developer']
+  Row 4: ['Date', '17/04/2024', 'File name', '4. Softtware Requirement Specification_IEEE 830-1998.docx']
+
+Table 3 (rows: 9, cols: 4):
+  Row 0: ['Mentor', 'Huy, Nguyen Dang Quang', 'Signature:', '']
+  Row 1: ['Mentor', 'Huy, Nguyen Dang Quang', 'Date:', '']
+  Row 2: ['Mentor', 'Huy, Nguyen Dang Quang', 'Date:', '']
+  Row 3: ['Team member(s)', 'Nhan, Nguyen Thanh', 'Signature:', '']
+  Row 4: ['Team member(s)', 'Nhan, Nguyen Thanh', 'Date:', '']
+  Row 5: ['Team member(s)', 'Tuan, Phan Quang', 'Signature:', '']
+  Row 6: ['Team member(s)', 'Tuan, Phan Quang', 'Date:', '']
+  Row 7: ['Team member(s)', 'Hong, Tran Thi Thu', 'Signature:', '']
+  Row 8: ['Team member(s)', 'Hong, Tran Thi Thu', 'Date:', '']
+
+Table 4 (rows: 10, cols: 2):
+  Row 0: ['Từ viết tắt', 'Nghĩa']
+  Row 1: ['HR', 'Human Resource (Nhân sự)']
+  Row 2: ['FR', 'Functional Requirement (Yêu cầu chức năng)']
+  Row 3: ['NFR', 'Non-functional Requirement (Yêu cầu phi chức năng)']
+  Row 4: ['DB', 'Database (Cơ sở dữ liệu)']
+  Row 5: ['API', 'Application Programming Interface']
+  Row 6: ['JWT', 'JSON Web Token']
+  Row 7: ['RBAC', 'Role-Based Access Control (Phân quyền theo vai trò)']
+  Row 8: ['CRUD', 'Create, Read, Update, Delete']
+  Row 9: ['KPI', 'Key Performance Indicator']
+
+Table 5 (rows: 5, cols: 3):
+  Row 0: ['Loại người dùng', 'Mô tả', 'Kỹ năng']
+  Row 1: ['Admin', 'Quản lý người dùng, phân quyền, thiết lập hệ thống.', 'Kỹ năng CNTT cơ bản']
+  Row 2: ['HR Manager', 'Quản lý hồ sơ, hợp đồng, nhân viên.', 'Nghiệp vụ nhân sự']
+  Row 3: ['Payroll Manager', 'Quản lý bảng lương, phụ cấp, khấu trừ.', 'Nghiệp vụ tài chính']
+  Row 4: ['Employee', 'Xem hồ sơ, lịch sử chấm công và lương.', 'Người dùng phổ thông']
+
+Table 6 (rows: 8, cols: 3):
+  Row 0: ['Mã', 'Mô tả yêu cầu chức năng', 'Mức ưu tiên']
+  Row 1: ['FR1', 'Hệ thống cho phép người dùng đăng nhập bằng email và mật khẩu.', 'Cao']
+  Row 2: ['', '', '']
+  Row 3: ['', '', '']
+  Row 4: ['', '', '']
+  Row 5: ['', '', '']
+  Row 6: ['', '', '']
+  Row 7: ['', '', '']
+
+Table 7 (rows: 7, cols: 2):
+  Row 0: ['Loại', 'Yêu cầu']
+  Row 1: ['Performance', 'Thời gian phản hồi < 2 giây.']
+  Row 2: ['Security', '']
+  Row 3: ['Reliability', '']
+  Row 4: ['Usability', '']
+  Row 5: ['Scalability', '']
+  Row 6: ['', '']
+
+Table 8 (rows: 4, cols: 3):
+  Row 0: ['Use case ID', 'Use case name', 'Functional Req.']
+  Row 1: ['UC.01', 'Get Reports', 'FR1.1']
+  Row 2: ['UC.02', 'View Alerts', 'FR1.2']
+  Row 3: ['….', '..', '…']
+
+Table 9 (rows: 52, cols: 6):
+  Row 0: ['Use Case ID', 'UC.02', 'UC.02', 'UC.02', 'UC.02', 'UC.02']
+  Row 1: ['Use Case Name', 'Đăng nhập vào hệ thống', 'Đăng nhập vào hệ thống', 'Đăng nhập vào hệ thống', 'Đăng nhập vào hệ thống', 'Đăng nhập vào hệ thống']
+  Row 2: ['Created by', 'Huy Nguyen', 'Huy Nguyen', 'Last updated by', 'Last updated by', 'Huy Nguyen']
+  Row 3: ['Date Created', 'Oct 01, 2024', 'Oct 01, 2024', 'Date last updated', 'Date last updated', 'Oct 05, 2024']
+  Row 4: ['Actors', 'Người dùng (User), Hệ thống xác thực (Authentication System)', 'Người dùng (User), Hệ thống xác thực (Authentication System)', 'Người dùng (User), Hệ thống xác thực (Authentication System)', 'Người dùng (User), Hệ thống xác thực (Authentication System)', 'Người dùng (User), Hệ thống xác thực (Authentication System)']
+  Row 5: ['Brief Description', 'Người dùng đăng nhập vào hệ thống bằng cách cung cấp tên đăng nhập và mật khẩu hợp lệ.', 'Người dùng đăng nhập vào hệ thống bằng cách cung cấp tên đăng nhập và mật khẩu hợp lệ.', 'Người dùng đăng nhập vào hệ thống bằng cách cung cấp tên đăng nhập và mật khẩu hợp lệ.', 'Người dùng đăng nhập vào hệ thống bằng cách cung cấp tên đăng nhập và mật khẩu hợp lệ.', 'Người dùng đăng nhập vào hệ thống bằng cách cung cấp tên đăng nhập và mật khẩu hợp lệ.']
+  Row 6: ['Goal', 'Chức năng này cho phép user đăng nhập vào hệ thống', 'Chức năng này cho phép user đăng nhập vào hệ thống', 'Chức năng này cho phép user đăng nhập vào hệ thống', 'Chức năng này cho phép user đăng nhập vào hệ thống', 'Chức năng này cho phép user đăng nhập vào hệ thống']
+  Row 7: ['Trigger', 'Người dùng mở trang đăng nhập và yêu cầu đăng nhập.', 'Người dùng mở trang đăng nhập và yêu cầu đăng nhập.', 'Người dùng mở trang đăng nhập và yêu cầu đăng nhập.', 'Người dùng mở trang đăng nhập và yêu cầu đăng nhập.', 'Người dùng mở trang đăng nhập và yêu cầu đăng nhập.']
+  Row 8: ['Pre-conditions', 'Người dùng đã có tài khoản hợp lệ. Hệ thống đang hoạt động và có kết nối với cơ sở dữ liệu.', 'Người dùng đã có tài khoản hợp lệ. Hệ thống đang hoạt động và có kết nối với cơ sở dữ liệu.', 'Người dùng đã có tài khoản hợp lệ. Hệ thống đang hoạt động và có kết nối với cơ sở dữ liệu.', 'Người dùng đã có tài khoản hợp lệ. Hệ thống đang hoạt động và có kết nối với cơ sở dữ liệu.', 'Người dùng đã có tài khoản hợp lệ. Hệ thống đang hoạt động và có kết nối với cơ sở dữ liệu.']
+  Row 9: ['Post-conditions', 'Người dùng được xác thực thành công và được truy cập vào hệ thống. Phiên làm việc (user session) được tạo cho người dùng.', 'Người dùng được xác thực thành công và được truy cập vào hệ thống. Phiên làm việc (user session) được tạo cho người dùng.', 'Người dùng được xác thực thành công và được truy cập vào hệ thống. Phiên làm việc (user session) được tạo cho người dùng.', 'Người dùng được xác thực thành công và được truy cập vào hệ thống. Phiên làm việc (user session) được tạo cho người dùng.', 'Người dùng được xác thực thành công và được truy cập vào hệ thống. Phiên làm việc (user session) được tạo cho người dùng.']
+  Row 10: ['Main Flow', 'Step', 'Actor Action', 'Actor Action', 'System Response', 'System Response']
+  Row 11: ['Main Flow', '1', 'Mở trang đăng nhập của hệ thống.', 'Mở trang đăng nhập của hệ thống.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.']
+  Row 12: ['Main Flow', '2', 'Nhập tên đăng nhập và mật khẩu hợp lệ vào các trường tương ứng.', 'Nhập tên đăng nhập và mật khẩu hợp lệ vào các trường tương ứng.', '', '']
+  Row 13: ['Main Flow', '3', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Kiểm tra thông tin người dùng nhập vào. Hệ thống gửi yêu cầu xác minh tên đăng nhập và mật khẩu tới cơ sở dữ liệu.', 'Kiểm tra thông tin người dùng nhập vào. Hệ thống gửi yêu cầu xác minh tên đăng nhập và mật khẩu tới cơ sở dữ liệu.']
+  Row 14: ['Main Flow', '4', '', '', 'Nếu tên đăng nhập và mật khẩu hợp lệ, hệ thống tạo phiên làm việc (session) cho người dùng.', 'Nếu tên đăng nhập và mật khẩu hợp lệ, hệ thống tạo phiên làm việc (session) cho người dùng.']
+  Row 15: ['Main Flow', '5', 'Được truy cập vào trang chủ của hệ thống và có thể bắt đầu sử dụng các chức năng khác.', 'Được truy cập vào trang chủ của hệ thống và có thể bắt đầu sử dụng các chức năng khác.', 'Chuyển hướng người dùng đến trang chủ hoặc trang dashboard của hệ thống.', 'Chuyển hướng người dùng đến trang chủ hoặc trang dashboard của hệ thống.']
+  Row 16: ['Alternative Flow', 'Luồng phụ 1: Thông tin đăng nhập không chính xác', 'Luồng phụ 1: Thông tin đăng nhập không chính xác', 'Luồng phụ 1: Thông tin đăng nhập không chính xác', 'Luồng phụ 1: Thông tin đăng nhập không chính xác', 'Luồng phụ 1: Thông tin đăng nhập không chính xác']
+  Row 17: ['Alternative Flow', 'Step', 'Actor Action', 'Actor Action', 'System Response', 'System Response']
+  Row 18: ['Alternative Flow', '1', 'Mở trang đăng nhập của hệ thống.', 'Mở trang đăng nhập của hệ thống.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.']
+  Row 19: ['Alternative Flow', '2', 'Người dùng nhập sai tên đăng nhập hoặc mật khẩu', 'Người dùng nhập sai tên đăng nhập hoặc mật khẩu', '', '']
+  Row 20: ['Alternative Flow', '3', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Kiểm tra thông tin người dùng nhập vào. Hệ thống gửi yêu cầu xác minh tên đăng nhập và mật khẩu tới cơ sở dữ liệu.', 'Kiểm tra thông tin người dùng nhập vào. Hệ thống gửi yêu cầu xác minh tên đăng nhập và mật khẩu tới cơ sở dữ liệu.']
+  Row 21: ['Alternative Flow', '4', '', '', 'Xác minh thông tin và phát hiện rằng tên đăng nhập hoặc mật khẩu không chính xác.', 'Xác minh thông tin và phát hiện rằng tên đăng nhập hoặc mật khẩu không chính xác.']
+  Row 22: ['Alternative Flow', '', '', '', 'Hiển thị thông báo lỗi: "Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại."', 'Hiển thị thông báo lỗi: "Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại."']
+  Row 23: ['Alternative Flow', '5', 'Thử nhập lại thông tin đăng nhập.', 'Thử nhập lại thông tin đăng nhập.', '', '']
+  Row 24: ['Alternative Flow', '6', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Tiếp tục xác minh thông tin mới (quay lại bước 3 của luồng chính).', 'Tiếp tục xác minh thông tin mới (quay lại bước 3 của luồng chính).']
+  Row 25: ['Alternative Flow', 'Luồng phụ 2: Người dùng kích vào liên kết quên mật khẩu', 'Luồng phụ 2: Người dùng kích vào liên kết quên mật khẩu', 'Luồng phụ 2: Người dùng kích vào liên kết quên mật khẩu', 'Luồng phụ 2: Người dùng kích vào liên kết quên mật khẩu', 'Luồng phụ 2: Người dùng kích vào liên kết quên mật khẩu']
+  Row 26: ['Alternative Flow', 'Step', 'Actor Action', 'Actor Action', 'System Response', 'System Response']
+  Row 27: ['Alternative Flow', '1', 'Mở trang đăng nhập của hệ thống.', 'Mở trang đăng nhập của hệ thống.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.']
+  Row 28: ['Alternative Flow', '2', 'Nhấn vào liên kết "Quên mật khẩu" trên trang đăng nhập.', 'Nhấn vào liên kết "Quên mật khẩu" trên trang đăng nhập.', 'Hiển thị trang yêu cầu nhập địa chỉ email đã đăng ký của người dùng để khôi phục mật khẩu.', 'Hiển thị trang yêu cầu nhập địa chỉ email đã đăng ký của người dùng để khôi phục mật khẩu.']
+  Row 29: ['Alternative Flow', '3', 'Nhập địa chỉ email', 'Nhập địa chỉ email', '', '']
+  Row 30: ['Alternative Flow', '4', 'Nhấn nút "Gửi".', 'Nhấn nút "Gửi".', 'Kiểm tra email trong cơ sở dữ liệu.', 'Kiểm tra email trong cơ sở dữ liệu.']
+  Row 31: ['Alternative Flow', '', '', '', 'Nếu email hợp lệ, hệ thống gửi một email chứa liên kết đặt lại mật khẩu.', 'Nếu email hợp lệ, hệ thống gửi một email chứa liên kết đặt lại mật khẩu.']
+  Row 32: ['Alternative Flow', '5', 'Mở email và nhấn vào liên kết đặt lại mật khẩu.', 'Mở email và nhấn vào liên kết đặt lại mật khẩu.', 'Hiển thị trang đặt lại mật khẩu mới.', 'Hiển thị trang đặt lại mật khẩu mới.']
+  Row 33: ['Alternative Flow', '6', 'Nhập mật khẩu mới', 'Nhập mật khẩu mới', '', '']
+  Row 34: ['Alternative Flow', '7', 'nhấn nút "Xác nhận".', 'nhấn nút "Xác nhận".', 'Cập nhật mật khẩu mới và hiển thị thông báo thành công.', 'Cập nhật mật khẩu mới và hiển thị thông báo thành công.']
+  Row 35: ['', '', '', '', 'Chuyển về trang đăng nhập', 'Chuyển về trang đăng nhập']
+  Row 36: ['Exception Flow', 'Luồng ngoại lệ 1: Hệ thống mất kết nối với cơ sở dữ liệu', 'Luồng ngoại lệ 1: Hệ thống mất kết nối với cơ sở dữ liệu', 'Luồng ngoại lệ 1: Hệ thống mất kết nối với cơ sở dữ liệu', 'Luồng ngoại lệ 1: Hệ thống mất kết nối với cơ sở dữ liệu', 'Luồng ngoại lệ 1: Hệ thống mất kết nối với cơ sở dữ liệu']
+  Row 37: ['Exception Flow', 'Step', 'Actor Action', 'Actor Action', 'System Response', 'System Response']
+  Row 38: ['Exception Flow', '1', 'Mở trang đăng nhập của hệ thống.', 'Mở trang đăng nhập của hệ thống.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.']
+  Row 39: ['Exception Flow', '2', 'Người dùng nhập tên đăng nhập hoặc mật khẩu', 'Người dùng nhập tên đăng nhập hoặc mật khẩu', '', '']
+  Row 40: ['Exception Flow', '3', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Xác minh thông tin nhưng không thể truy cập cơ sở dữ liệu do mất kết nối.', 'Xác minh thông tin nhưng không thể truy cập cơ sở dữ liệu do mất kết nối.']
+  Row 41: ['Exception Flow', '5', '', '', 'Hiển thị thông báo lỗi: "Lỗi kết nối với máy chủ. Vui lòng thử lại sau."', 'Hiển thị thông báo lỗi: "Lỗi kết nối với máy chủ. Vui lòng thử lại sau."']
+  Row 42: ['Exception Flow', '6', 'Có thể thử lại sau hoặc liên hệ với quản trị viên.', 'Có thể thử lại sau hoặc liên hệ với quản trị viên.', '', '']
+  Row 43: ['Exception Flow', 'Luồng ngoại lệ 2: Người dùng không nhập User hoặc Pasword', 'Luồng ngoại lệ 2: Người dùng không nhập User hoặc Pasword', 'Luồng ngoại lệ 2: Người dùng không nhập User hoặc Pasword', 'Luồng ngoại lệ 2: Người dùng không nhập User hoặc Pasword', 'Luồng ngoại lệ 2: Người dùng không nhập User hoặc Pasword']
+  Row 44: ['Exception Flow', 'Step', 'Actor Action', 'Actor Action', 'System Response', 'System Response']
+  Row 45: ['Exception Flow', '1', 'Mở trang đăng nhập của hệ thống.', 'Mở trang đăng nhập của hệ thống.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.', 'Hiển thị trang đăng nhập, bao gồm các trường để nhập tên đăng nhập và mật khẩu.']
+  Row 46: ['Exception Flow', '2', 'Người dùng không nhập User hoặc Password', 'Người dùng không nhập User hoặc Password', '', '']
+  Row 47: ['Exception Flow', '3', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Kiểm tra thông tin người dùng nhập vào, nếu thông tin User hoặc Password rỗng(trống) thì hiển thị thông báo “Yêu cầu nhập User hoặc Password”', 'Kiểm tra thông tin người dùng nhập vào, nếu thông tin User hoặc Password rỗng(trống) thì hiển thị thông báo “Yêu cầu nhập User hoặc Password”']
+  Row 48: ['Exception Flow', '4', 'Nhập đầy đủ thông tin User và Pasword', 'Nhập đầy đủ thông tin User và Pasword', '', '']
+  Row 49: ['Exception Flow', '5', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Nhấn nút "Đăng nhập" để gửi thông tin.', 'Tiếp tục xác minh thông tin mới (quay lại bước 3 của luồng chính).', 'Tiếp tục xác minh thông tin mới (quay lại bước 3 của luồng chính).']
+  Row 50: ['Priority', 'High', 'High', 'High', 'High', 'High']
+  Row 51: ['Business Rule', 'BR01', 'BR01', 'BR01', 'BR01', 'BR01']
+
+Table 10 (rows: 5, cols: 2):
+  Row 0: ['ID', 'Business Rules']
+  Row 1: ['BR-01', 'Mỗi nhân viên có tối đa 12 ngày nghỉ phép/năm']
+  Row 2: ['BR-02', 'Chỉ HR Manager được cập nhật lương.']
+  Row 3: ['BR-03', 'Tài khoản bị khóa sau 3 lần đăng nhập sai.']
+  Row 4: ['…', '']
+
+Table 11 (rows: 5, cols: 2):
+  Row 0: ['Thuật ngữ', 'Giải thích']
+  Row 1: ['Dashboard', 'Trang tổng quan hiển thị thông tin nhân sự và lương.']
+  Row 2: ['Payroll', 'Hệ thống bảng lương, thưởng, phụ cấp.']
+  Row 3: ['Leave Request', 'Yêu cầu nghỉ phép của nhân viên.']
+  Row 4: ['Alert', 'Cảnh báo nội bộ trong hệ thống.']
+
+Table 12 (rows: 8, cols: 7):
+  Row 0: ['BR ID', 'Business Requirement Description', 'FR ID', 'Functional Requirement Description', 'API Endpoint', 'Test Case ID', 'Status']
+  Row 1: ['BR-01', 'HR system must synchronize employee information with Payroll system.', 'FR-01', 'System shall synchronize employee data between HUMAN (SQL Server) and PAYROLL (MySQL).', '/api/v1/sync/employees', 'Chổ này sẽ để trống, sau khi viết tài liệu 9. System Testing-Report.docx thì update sau', 'Chổ này sẽ để trống, sau khi viết tài liệu 9. System Testing-Report.docx thì update sau']
+  Row 2: ['BR-02', 'The system must allow users to log in securely.', 'FR-02', 'System shall authenticate users via email and password using JWT.', '/api/v1/auth/login', '', '']
+  Row 3: ['', '', '', '', '', '', '']
+  Row 4: ['', '', '', '', '', '', '']
+  Row 5: ['', '', '', '', '', '', '']
+  Row 6: ['', '', '', '', '', '', '']
+  Row 7: ['', '', '', '', '', '', '']

@@ -1,0 +1,20 @@
+# Normalize text files in the repository.
+* text=auto eol=lf
+
+# Keep Windows helper scripts in CRLF if added later.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary Office/PDF/image/archive artifacts.
+*.docx binary
+*.xlsx binary
+*.xlsm binary
+*.xlsb binary
+*.pptx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary

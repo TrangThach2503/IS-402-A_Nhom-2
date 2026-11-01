@@ -1,0 +1,17 @@
+pandas
+numpy
+openpyxl
+xlsxwriter
+python-docx
+python-pptx
+pdfplumber
+pypdf
+pdf2docx
+reportlab
+plotly
+lxml
+defusedxml
+Pillow
+markitdown[pptx]
+pyxlsb
+pytest

@@ -1,0 +1,779 @@
+<!DOCTYPE html><html class="light" lang="en" style="width: 1280px; height: 3588px; overflow: hidden; position: relative;"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-fixed":"#ffdea4","on-primary-fixed-variant":"#7a2c36","on-secondary-container":"#785f53","surface-dim":"#dfd9d5","on-surface":"#1d1b19","secondary-container":"#fddccc","surface-container-highest":"#e8e1dd","on-primary-fixed":"#40000e","surface":"#fff8f4","on-tertiary-fixed-variant":"#5d4200","on-surface-variant":"#544243","primary-fixed":"#ffdadb","on-error":"#ffffff","surface-container-lowest":"#ffffff","primary":"#280006","on-secondary":"#ffffff","surface-container-high":"#eee7e3","error-container":"#ffdad6","on-secondary-fixed-variant":"#584237","on-tertiary-container":"#a88641","on-secondary-fixed":"#28180e","secondary-fixed":"#fddccc","inverse-surface":"#33302d","secondary":"#71594d","surface-variant":"#e8e1dd","secondary-fixed-dim":"#dfc0b1","background":"#fff8f4","outline":"#877273","on-primary-container":"#cf6f78","inverse-on-surface":"#f6efeb","on-tertiary":"#ffffff","primary-container":"#4c0816","surface-container-low":"#f9f2ee","tertiary-fixed-dim":"#e8c176","inverse-primary":"#ffb2b7","outline-variant":"#dac1c1","on-background":"#1d1b19","error":"#ba1a1a","on-tertiary-fixed":"#261900","surface-bright":"#fff8f4","tertiary":"#160d00","surface-container":"#f3ede9","primary-fixed-dim":"#ffb2b7","tertiary-container":"#312100","on-primary":"#ffffff","surface-tint":"#98434d","on-error-container":"#93000a"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter-mobile":"1rem","space-md":"1rem","margin-mobile":"1rem","margin":"2.5rem","space-xl":"2.5rem","space-lg":"1.5rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"label-lg":["Plus Jakarta Sans"],"headline-lg":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"price-numeric":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Playfair Display"],"headline-sm":["Playfair Display"],"headline-md":["Playfair Display"]},fontSize:{"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"title-md":["18px",{"lineHeight":"24px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["36px",{"lineHeight":"44px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"price-numeric":["15px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><main class="w-full bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- 1. Translucent Single Navigation Bar -->
+<div class="w-full transition-colors duration-700 ease-out" id="navWrapper" style="background-color: #8B1528;">
+<header class="bg-white/10 backdrop-blur-md border-b-2 border-white/60 px-8 py-4 flex items-center justify-between w-full relative z-40 transition-colors duration-500" id="singleNavbar">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[28px] text-white hero-nav-cake-icon transition-colors">cake</span>
+<div class="flex flex-col leading-none">
+<span class="font-headline-sm font-bold text-white tracking-tight hero-nav-title transition-colors">CustomCakeAI</span>
+<span class="font-label-md text-[10px] tracking-widest uppercase text-white/80 hero-nav-sub transition-colors">DA NANG ATELIER</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-lg font-bold text-white relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white hero-active-link transition-colors" href="#">Home</a>
+<a class="font-label-lg font-medium text-white/85 hover:text-white hero-nav-link transition-colors" href="#">Cake Menu</a>
+<a class="font-label-lg font-medium text-white/85 hover:text-white hero-nav-link transition-colors" href="#">Design Cake</a>
+<a class="font-label-lg font-medium text-white/85 hover:text-white hero-nav-link transition-colors" href="#">Track Order</a>
+</nav>
+<div class="flex items-center">
+<a class="hero-signin-btn inline-flex items-center gap-space-xs bg-white text-[#4C0816] font-bold px-6 py-2.5 rounded-full shadow-md hover:scale-105 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span>Sign In</span>
+</a>
+</div>
+</header>
+</div>
+<!-- 2. Store Capacity Alert Banner (Directly underneath the single navbar) -->
+<div class="w-full bg-[#fddccc] text-[#785f53] px-margin-mobile md:px-8 py-2.5 transition-all duration-300 border-b border-[#dac1c1]/40" id="capacityBanner">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between gap-space-sm text-center md:text-left">
+<div class="flex items-center gap-space-xs mx-auto md:mx-0">
+<span class="material-symbols-outlined text-[18px] text-[#280006]" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="font-body-md text-[13px] md:text-label-md font-medium text-[#544243]">
+        Our ovens are at full capacity for today. Please select tomorrow or later for cake delivery!
+      </p>
+</div>
+<button aria-label="Dismiss alert" class="text-[#785f53] hover:text-[#280006] p-1 flex items-center justify-center transition-colors" onclick="document.getElementById('capacityBanner').style.display='none'">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- 3. Dynamic Hero Carousel Section (Pure Unboxed Hero Presentation) -->
+<section class="relative w-full min-h-[720px] lg:min-h-[780px] transition-colors duration-700 ease-out overflow-hidden flex flex-col justify-between py-space-xl" id="heroSection" style="background-color: #8B1528;">
+<!-- Scattered white/20 stroke bakery doodles & icons in negative space -->
+<div class="absolute inset-0 pointer-events-none select-none overflow-hidden z-0">
+<!-- Top-Left Cute Tiered Cake -->
+<svg class="absolute top-8 left-10 w-24 h-24 stroke-white/20 fill-none transition-all duration-700 hero-doodle" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 100 100">
+<rect height="30" rx="4" width="50" x="25" y="55"></rect>
+<rect height="23" rx="3" width="30" x="35" y="32"></rect>
+<path d="M 25 65 Q 35 72 45 65 T 65 65 T 75 65"></path>
+<path d="M 35 42 Q 42 47 50 42 T 65 42"></path>
+<line x1="50" x2="50" y1="20" y2="32"></line>
+<circle class="fill-white/25" cx="50" cy="16" r="3"></circle>
+</svg>
+<!-- Top-Center Floating Hearts -->
+<svg class="absolute top-12 left-1/3 w-12 h-12 stroke-white/20 fill-none hero-doodle" stroke-width="1.6" viewBox="0 0 50 50">
+<path d="M25 39 C 12 28 8 20 8 14 C 8 7 14 3 20 3 C 23 3 25 5 25 5 C 25 5 27 3 30 3 C 36 3 42 7 42 14 C 42 20 38 28 25 39 Z"></path>
+</svg>
+<!-- Mid-Left Delicate Cake Slice -->
+<svg class="absolute top-1/2 left-8 w-20 h-20 stroke-white/20 fill-none -rotate-12 hero-doodle" stroke-width="1.8" viewBox="0 0 80 80">
+<polygon points="15,55 65,30 65,65 15,65"></polygon>
+<path d="M 15 55 L 40 20 L 65 30"></path>
+<circle class="fill-white/20" cx="40" cy="18" r="4"></circle>
+<line x1="28" x2="55" y1="58" y2="45"></line>
+</svg>
+<!-- Bottom-Left Croissant Doodle -->
+<svg class="absolute bottom-16 left-16 w-20 h-16 stroke-white/20 fill-none rotate-12 hero-doodle" stroke-width="1.8" viewBox="0 0 70 50">
+<path d="M 10 35 C 15 15, 55 15, 60 35 C 50 45, 20 45, 10 35 Z"></path>
+<path d="M 22 28 C 28 20, 42 20, 48 28"></path>
+<path d="M 30 32 C 33 24, 37 24, 40 32"></path>
+</svg>
+<!-- Right Floating Whisk -->
+<svg class="absolute top-20 right-1/4 w-16 h-28 stroke-white/20 fill-none rotate-45 hero-doodle" stroke-width="1.6" viewBox="0 0 40 80">
+<ellipse cx="20" cy="28" rx="14" ry="22"></ellipse>
+<ellipse cx="20" cy="28" rx="8" ry="22"></ellipse>
+<line x1="20" x2="20" y1="6" y2="50"></line>
+<rect height="24" rx="2" width="6" x="17" y="50"></rect>
+</svg>
+<!-- Bottom-Right Rolling Pin & Wheat -->
+<svg class="absolute bottom-12 right-16 w-32 h-16 stroke-white/20 fill-none -rotate-12 hero-doodle" stroke-width="1.8" viewBox="0 0 100 50">
+<rect height="14" rx="3" width="50" x="25" y="18"></rect>
+<line stroke-linecap="round" stroke-width="4" x1="10" x2="25" y1="25" y2="25"></line>
+<line stroke-linecap="round" stroke-width="4" x1="75" x2="90" y1="25" y2="25"></line>
+</svg>
+<!-- Sparkles -->
+<span class="absolute top-1/4 right-1/3 text-white/30 text-[26px] hero-sparkle">✦</span>
+<span class="absolute top-2/3 right-1/2 text-white/25 text-[20px] hero-sparkle">✧</span>
+<span class="absolute bottom-1/3 right-20 text-white/30 text-[28px] hero-sparkle">✦</span>
+<span class="absolute top-16 right-12 text-white/20 text-[18px] hero-sparkle">✧</span>
+</div>
+<!-- Central Hero Stage -->
+<div class="relative z-10 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center my-auto">
+<!-- Left Column: Hero Editorial Typography & Actions -->
+<div class="lg:col-span-6 space-y-space-lg flex flex-col justify-center">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center">
+<span class="hero-eyebrow border-2 border-white bg-white/10 text-white text-xs tracking-wider uppercase px-4 py-1.5 rounded-full font-label-md transition-all">
+          ARTISANAL CONFECTIONERY STUDIO • DA NANG
+        </span>
+</div>
+<!-- Main Headline -->
+<h1 class="hero-heading font-display-lg text-[40px] md:text-[56px] leading-[1.08] text-white font-bold tracking-tight transition-colors duration-500">
+        FRESH BIRTHDAY CAKES BAKED DAILY
+      </h1>
+<!-- Subheadline -->
+<p class="hero-subheading font-body-lg text-white/90 text-[16px] md:text-[18px] leading-relaxed max-w-xl transition-colors duration-500">
+        Design your dream celebration cake with smart 2D studio tools, or order delicious handcrafted cakes baked fresh every morning.
+      </p>
+<!-- Dual Action Pill Buttons -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="hero-primary-cta inline-flex items-center justify-center gap-space-xs bg-white text-[#4C0816] font-bold px-8 py-3.5 rounded-full shadow-md hover:scale-105 active:scale-95 transition-transform duration-200" href="#">
+<span>Design Your Cake Now</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="hero-secondary-cta inline-flex items-center justify-center border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white/20 transition-all duration-200" href="#">
+          Explore Cake Menu
+        </a>
+</div>
+<!-- Social Proof Trust Stack (Strictly No Star Reviews) -->
+<div class="pt-space-sm flex items-center gap-space-md">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm bg-white" data-alt="Close-up portrait of a joyous customer holding a slice of strawberry birthday cake in a warm bakery atelier setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQX_o-fdT1TQfhhWMyYYYHNhp5H4FAirUbXixViEvKjShGq9LzZwmkzaDwVNlsCw3QbXZMKOn_2KfJKzQHm1vdomK8Cup9N3ezMlTn5mwQE7ThYowxBy-UiDbOfJo_W29e726v63Xaf-JBWOuZxA0erNAT8ZlKc2OE_2T3RgHd7HUqPhehSlmjtL4Ht-bGJtkqDL7Ex3tOZ0_0odElghzwpJ6bXiuH3Z8xOlENgkk1FZU9me1xBfI">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm bg-white" data-alt="Portrait of a young woman smiling warmly while presenting a handcrafted chocolate celebration cake in Da Nang" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6dN8ym8mU2KNHGtYrbIN-DgVMt3BqnaWkWqzFHUjkowahXuHZja_9IkN8wLKwM4kTr_ExBNr4DR0mfZlyW7r2CaoX__YnsAlIuSIl7eETXiQAX8yojwsh_etPiLGkvATqqHWTKj8N_k9Re04YVGQusi649SyhW44cT1joUoFsObtwiazDV9_LGGHOcTs3xp-U-FAtRp3XrCB0ZCXx5F8acmxnUE2TZ8Jhjb-9nhQp0uBN03nUf9E">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm bg-white" data-alt="Smiling couple celebrating with a delicate vintage buttercream floral anniversary cake with candles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbDFjjO0sU8m1wMrcRn6JgQPY27bp8wDAWrPIUuL9hKXnuYvx77dSM_YsBkZOElHg9wjRhuknlqvd8vTxnyPrKIPuZGJ1ZlCSrgpkFy-U_pC7aEKzubBEPsp2tWHb0y4ocEQhxYji_n58GQFAJBZ2ijciG-DmevwxdRgwP6Y2BXLqxefR9OEavQRChQSTF-zqafKHbBY5IEfY20UG4P1-GPoafjELrZerisRh-Htj38Ru3VKOqk2c">
+</div>
+<p class="hero-social-text font-body-md text-white/90 text-sm font-medium transition-colors duration-500">
+          3,000+ sweet celebrations handcrafted &amp; delivered in Da Nang
+        </p>
+</div>
+</div>
+<!-- Right Column: Pure Dominant Unboxed Hero Cake Showcase (Zero Enclosing Frame) -->
+<div class="lg:col-span-6 flex items-center justify-center relative min-h-[380px] md:min-h-[460px]">
+<!-- Detached Floating Micro-Badges -->
+<div class="hero-floating-badge-top absolute top-2 right-4 md:top-6 md:right-10 z-20 bg-white/20 backdrop-blur-md text-white text-xs px-3.5 py-1.5 rounded-full border-2 border-white shadow-lg font-label-md transition-all duration-500 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">eco</span>
+<span>Handcrafted Daily in Da Nang</span>
+</div>
+<div class="hero-floating-badge-bottom absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-white text-[#4C0816] font-bold text-sm px-4 py-1.5 rounded-full shadow-md transition-all duration-500 font-price-numeric" id="heroPriceBadge">
+        From 250,000 VND
+      </div>
+<!-- Dynamic Cake Images (Stacked for crossfade transitions) -->
+<div class="relative w-full max-w-[540px] aspect-square flex items-center justify-center select-none">
+<!-- Slide 0: Strawberry Rose Cream Cake -->
+<img class="cake-visual absolute inset-0 w-full h-full object-contain filter drop-shadow-[0_30px_45px_rgba(0,0,0,0.38)] transition-all duration-700 opacity-100 scale-100" data-alt="Magnificent unboxed artisanal strawberry rose cream cake on a white pedestal, surrounded by fresh glistening Da Lat strawberries, glossy blush glaze, and organic rose petal garnishes. High editorial gourmet studio lighting with pure transparency backdrop." id="cakeSlide0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlMLMCBiFgq5_KIOrTft_iHg2D7nqLSw4_qWX4Cg4MROtvZgyB7-mgZTrtTxMcoBrM34WhXuCuIVfIurWdc6MXRjI_iMGo-JBJRsBBwdxeKMMmlmUvuNFUT0zpPrMchDBNjHujrV5O_rDHn5dS4mm19jKGwlaPSbhwFwd7RuMJZaAJyte9pW5pGKqkBYXPSE2kAtQ6ZRV_Okd1x52syWcnpPNfBCGzoJt3j7Djz8ndLYzUm-9Xr_U">
+<!-- Slide 1: Belgian Chocolate Ganache Fudge Cake -->
+<img class="cake-visual absolute inset-0 w-full h-full object-contain filter drop-shadow-[0_30px_45px_rgba(0,0,0,0.38)] transition-all duration-700 opacity-0 scale-95 pointer-events-none" data-alt="Luxurious dark Belgian chocolate ganache drip cake with rich cocoa layers, glossy molten chocolate swirls, artisan chocolate curls and flaked Maldon sea salt crystals on a slate serving platter. Appetizing warm bakery lighting." id="cakeSlide1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB1QzF4haVFSdk4LvfYns7dgdobXUTn5dcNBOkGHiipnNpQwVoqrbdsCL2E95nzTq1DomU_hUosnUKBE-xNguijjIZkyPEBl7TQjYgrTpjw7O0fymsqQd5jirGy5VBdV8Op2YhR849OOqbr-tKzVxgyvXzYD57XOGjRmXArt1LXFbQ5jtNmc5MxKwQChRpBtJ5UyDD4gEuvLnalYEBt11Gz8G2mXR-Jpf7JhDuh_Yas862fTWFhT0">
+<!-- Slide 2: Korean Vintage Pastel Floral Cake -->
+<img class="cake-visual absolute inset-0 w-full h-full object-contain filter drop-shadow-[0_30px_45px_rgba(0,0,0,0.22)] transition-all duration-700 opacity-0 scale-95 pointer-events-none" data-alt="Delicate Korean aesthetic vintage buttercream white cake with intricately piped pastel blossom wreaths, soft blush details, and elegant cursive calligraphy on smooth ivory icing. Soft natural morning window lighting." id="cakeSlide2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC44kbgbZNvki-sSrU9K4nuLwWNA-XMMzk5usno6qahJeKaegiJYXatfWWj2u3etEm7xNkibcmrJ3s861hQGZhZT4jMecy-QjyJfb8rvahXOIAs3WFzzoUGECLLScm_b3fIClwfRXmvAURssUUj6tGNuk_4aKvx1hCNcHutMHFLj8iGaxmUne6a8yRzyLaVIWip_Ofziuve05tXTInPJCOmEJCm2Fhf81LI9qfz_hFpGMzcxzkA6Yk">
+</div>
+</div>
+</div>
+<!-- External Carousel Navigation Controls -->
+<div class="relative z-20 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-center pb-2 pt-6">
+<div class="inline-flex items-center gap-space-md bg-white/20 backdrop-blur-md px-6 py-2.5 rounded-full shadow-lg transition-all duration-500" id="heroControlsPill">
+<!-- Prev Button -->
+<button aria-label="Previous cake showcase" class="w-10 h-10 rounded-full flex items-center justify-center text-white bg-white/20 hover:bg-white/40 active:scale-90 transition-all" id="carouselPrevBtn" onclick="rotateSlide(-1)">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<!-- Pagination Indicators -->
+<div class="flex items-center gap-space-xs px-2">
+<button aria-label="Slide 1: Strawberry Rose Cake" class="carousel-dot h-2.5 rounded-full transition-all duration-300 w-8 bg-white" data-index="0" onclick="setSlide(0)"></button>
+<button aria-label="Slide 2: Belgian Chocolate" class="carousel-dot h-2.5 rounded-full transition-all duration-300 w-2.5 bg-white/40 hover:bg-white/70" data-index="1" onclick="setSlide(1)"></button>
+<button aria-label="Slide 3: Korean Vintage" class="carousel-dot h-2.5 rounded-full transition-all duration-300 w-2.5 bg-white/40 hover:bg-white/70" data-index="2" onclick="setSlide(2)"></button>
+</div>
+<!-- Next Button -->
+<button aria-label="Next cake showcase" class="w-10 h-10 rounded-full flex items-center justify-center text-white bg-white/20 hover:bg-white/40 active:scale-90 transition-all" id="carouselNextBtn" onclick="rotateSlide(1)">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. Occasion Category Quick-Picks Section -->
+<section class="w-full bg-[#FFF8F4] py-space-xl px-margin-mobile md:px-margin">
+<div class="max-w-[1440px] mx-auto space-y-space-xl">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto space-y-space-xs">
+<span class="font-label-md text-secondary uppercase tracking-widest text-[11px]">Handcrafted Collections</span>
+<h2 class="font-headline-lg text-[#4C0816] text-[36px] font-bold">
+        Celebrate Every Sweet Moment
+      </h2>
+<p class="font-body-lg text-on-surface-variant">
+        Choose a celebration style to begin your personalized cake journey.
+      </p>
+</div>
+<!-- 5 Category Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Card 1 -->
+<a class="group bg-white rounded-[16px] border-[1.5px] border-[#7A3E2D] p-space-md flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="space-y-space-md">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Playful birthday cake adorned with miniature handcrafted sugar animal toppers, pastel sprinkles, and cheerful festive birthday colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwI0hdsZ_es9kBSC9WZAi7wcliu0PkhOlVV85Jpn7NtT83zX5FKNnpJm8pnAqz1prIu9dWA5Qw0ICPAk7lf1oQUNMrbZfjjIJX7_NsFGrWxY_rhAGLVHy1BuXsaUjRMBphs3PCQVVyNB76USo9scQOIWjecyWkwCQcqgTO6tKyF7X6f6TKWriCIb72i2xEmNrW9s3Bydpao60fodJmQNeyBuB_gKunx8wZPtXmg9cjWNCiszuDGYU">
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[17px] group-hover:text-primary-container transition-colors">Birthday Celebrations</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-snug">Cute animal toppers &amp; playful pastel palettes.</p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between text-secondary group-hover:text-primary">
+<span class="font-label-md text-[12px]">Explore Styles</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group bg-white rounded-[16px] border-[1.5px] border-[#7A3E2D] p-space-md flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="space-y-space-md">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Romantic anniversary cake with vintage buttercream piped roses, soft dusty rose ribbon bows, and subtle edible pearl drops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARUJlJI7Fn5FeP5EKNv4AId7pXhK-J5QtiBaKh10-cRESFH6MaRiTEsyQcq2d1H0h0Mo57pcB61mrG84HKzgmMTpHAR-zi710V722Ujcf6UMqJwu-o3t9FHcCmVSf652UI3b1odOihZCCzRyz6V-1AEhqFon1PFXmNZnM8K09lkWL_XjCzRtgMRJ8kr6it60L_aZs81oXpl9eFZV24ScSEV-8RYXnuowVKp427CqTPafoZUfUe7pA">
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[17px] group-hover:text-primary-container transition-colors">Romantic &amp; Anniversary</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-snug">Vintage piped buttercream roses &amp; silk ribbon bows.</p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between text-secondary group-hover:text-primary">
+<span class="font-label-md text-[12px]">Explore Styles</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group bg-white rounded-[16px] border-[1.5px] border-[#7A3E2D] p-space-md flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="space-y-space-md">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Chic Korean minimalist bento cake with smooth pastel frosting, delicate cursive hand-lettering greeting, and minimalist clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUUKFSK5jbLdgYfKAeLiAH6bm1qS31h2tZHQ9bR10L7gZyuNwOESs4ylpJSgSM_n0mi_31qQpl7o7eKZ1KDSTjojNqt3WFQy62xAtoKIuORZBBf8YtFZm0vOzHGk3p7SR7vJ0YHQMAU2NkXxO2zmK-0k7vhObaAW35M6cX1F3OTcqERDBg__G9NKEGoI3TtcX8V4MZBJfjnCTMlgaoE266lBEzyPLueXrtYlTMxu7Upm0cAIzJIgg">
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[17px] group-hover:text-primary-container transition-colors">Korean Vintage Minimalist</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-snug">Clean pastel frosting &amp; delicate cursive lettering.</p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between text-secondary group-hover:text-primary">
+<span class="font-label-md text-[12px]">Explore Styles</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group bg-white rounded-[16px] border-[1.5px] border-[#7A3E2D] p-space-md flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="space-y-space-md">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant fantasy theme birthday cake featuring a golden princess tiara, gentle dreamy clouds, and glittering star candies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgEi64Mzer0_qIPD6l6dSR5OEDCJUlDOvxABqs5OZzMqrLsOwWlJ57sIGFe_dtDFABJkogIkjzINf5R9LfUoX7CDg7m4pXhL7ZVweGVCsC7r8AvxH2_ESGlKlOvOokuTP3-iIthHiPDYbJCC8C6SqYakgj-WFN7XHkVscZpcifC8cHS4XlFBgQJlygcfgfi560PNoEucrkdB0yvXwnJ3GAGf0Bm4GNaezcQoqE7TR2qjs1cnggopg">
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[17px] group-hover:text-primary-container transition-colors">Kids &amp; Fantasy</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-snug">Princess crowns, dinosaurs &amp; vibrant joyful accents.</p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between text-secondary group-hover:text-primary">
+<span class="font-label-md text-[12px]">Explore Styles</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 5 -->
+<a class="group bg-white rounded-[16px] border-[1.5px] border-[#7A3E2D] p-space-md flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#">
+<div class="space-y-space-md">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Decadent rich dark chocolate fudge cake topped with glossy Belgian chocolate truffles, cacao powder dusting, and dark chocolate flakes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAosVT8nyNTDVvD8SoleSeUnID-UQGSxiVtm-xIEfwG7ZgAf8M9YXxhqj_tLdWzuCIhd8o95l_nwVmnwqbbNSxIRGwklAjTX5wTLPG-EcVuVXPpt9vX0NIdp5YcPOZMHtXZgvSn0iIcAgtaadHEUItlM_03ELg004Kha1zWj8vt62LU1yjwgkHB5wescj4-hVZpSuDKPzdkI1OAzLX0faPlbFySqWCSY5BxVaNVpBug2SqW40v64gQ">
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[17px] group-hover:text-primary-container transition-colors">Chocolate Lovers</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-snug">Rich Belgian ganache &amp; dark cocoa fudge.</p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between text-secondary group-hover:text-primary">
+<span class="font-label-md text-[12px]">Explore Styles</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- 5. 3-Step Bespoke AI Studio Journey ("How It Works") -->
+<section class="w-full bg-surface px-margin-mobile md:px-margin py-space-lg">
+<div class="max-w-[1440px] mx-auto bg-[#F3EDE9] rounded-3xl p-space-lg md:p-space-xl border-[1.5px] border-[#7A3E2D] shadow-inner">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto space-y-space-xs mb-space-xl">
+<span class="font-label-md text-secondary uppercase tracking-widest text-[11px]">Studio Workflow</span>
+<h2 class="font-headline-lg text-[#4C0816] text-[30px] md:text-[38px] font-bold">
+        Bespoke Cake Design in 3 Simple Steps
+      </h2>
+<p class="font-body-lg text-on-surface-variant">
+        Turn your sweetest imagination into a handcrafted reality with our 2D studio.
+      </p>
+</div>
+<!-- 3 Architectural Step Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Step 01 -->
+<div class="bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] p-8 relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-baseline justify-between">
+<span class="font-display-lg text-[44px] text-[#C9A45C] leading-none font-bold">01</span>
+<span class="material-symbols-outlined text-secondary text-[28px]">mic</span>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[19px]">Speak or Type Your Dream Cake</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+              Tell us your celebration theme using natural Vietnamese voice or text. Our smart AI extracts flavors, size, tiers, and custom messages instantly.
+            </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs text-secondary font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+<span>Supports Vietnamese natural voice prompts</span>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] p-8 relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-baseline justify-between">
+<span class="font-display-lg text-[44px] text-[#C9A45C] leading-none font-bold">02</span>
+<span class="material-symbols-outlined text-secondary text-[28px]">auto_awesome</span>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[19px]">Choose from 3 AI 2D Concepts</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+              Review 3 clean visual 2D sketches crafted specifically for your occasion. Every draft includes instant, 100% transparent pricing.
+            </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs text-secondary font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Real-time price calculation ledger</span>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] p-8 relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-md">
+<div class="flex items-baseline justify-between">
+<span class="font-display-lg text-[44px] text-[#C9A45C] leading-none font-bold">03</span>
+<span class="material-symbols-outlined text-secondary text-[28px]">palette</span>
+</div>
+<div class="space-y-space-xs">
+<h3 class="font-title-md text-primary text-[19px]">Decorate on Canvas &amp; Freshly Baked</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+              Drag and drop real in-stock candles, toppers, and cash-roll surprises in our 2D Canvas. Approved by master bakers and delivered fresh in Da Nang.
+            </p>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-xs text-secondary font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Freshly baked morning of delivery</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Chef's Daily Bestsellers Showcase -->
+<section class="w-full bg-surface py-space-xl px-margin-mobile md:px-margin">
+<div class="max-w-[1440px] mx-auto space-y-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-md text-secondary uppercase tracking-widest text-[11px]">Daily Signature Menu</span>
+<h2 class="font-headline-lg text-[#4C0816] text-[32px] md:text-[40px] font-bold">
+          Our Signature Bestsellers
+        </h2>
+<p class="font-body-lg text-on-surface-variant">
+          Freshly baked handcrafted creations available for direct daily ordering in Da Nang.
+        </p>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-lg text-primary hover:text-primary-container font-semibold transition-colors" href="#">
+<span>View Complete Catalog</span>
+<span class="material-symbols-outlined text-[18px]">east</span>
+</a>
+</div>
+<!-- 4-Column Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Item 1 -->
+<div class="bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] flex flex-col justify-between shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300">
+<div class="space-y-space-md">
+<div class="relative w-full aspect-square bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Signature Strawberry Chiffon Cloud cake with light organic sponge layers, whipped fresh cream, and ripe Da Lat strawberry crowns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0biZxYhtzYyZ5S7ZeTunSjdm57vxaifpM7v_H8ORBCL1FIIavRIhi2c4lo_KKd5L5U6Fqo-wQX2t3U46KFXoqJFY1yRAJbjzyfYLMTmoYjTdrKFSycc0O2kXWJIGhBVjzwHxqVt4K4Lq6xoHfKEotWG1FglFCvJBQENKdwNr5QdfZH8oUGcCbecI6DFuMZ1oX2UrFFrGhYKEjJBrSFFdxiRTiIgzCp-KmEhQHYTbMD_VdnlFdp8A">
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm text-primary font-label-md text-[11px] px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+              Chef Pick
+            </span>
+</div>
+<div class="p-space-md space-y-space-xs">
+<h3 class="font-title-md text-primary text-[18px]">Strawberry Chiffon Cloud</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Size 16cm (4–6 servings)</p>
+<div class="pt-space-xs">
+<span class="font-price-numeric text-primary text-[17px] font-bold">From 250,000 VND</span>
+</div>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<a class="w-full h-[44px] rounded-full bg-[#4C0816] text-white flex items-center justify-center gap-space-xs font-label-lg font-bold shadow-md hover:bg-primary active:translate-y-0.5 transition-all" href="#">
+<span>Choose Size &amp; Order Now</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] flex flex-col justify-between shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300">
+<div class="space-y-space-md">
+<div class="relative w-full aspect-square bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Belgian Chocolate Truffle Drip cake with thick chocolate ganache dripping over rich layers, cocoa dusting, and sea salt crystals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJuL-U-yg0sK9SarLY948ifPQmyoHtSDRgrI3SGZGpE8D-4617lLTQ4GJowPFRK-xBwaGhwgkDHzlzgE6D5otv0IEGwuU2ZtFNQIwazzDIxeX4_Z2S2FsVfbiYiO_qiwE14lFJ6j5IeABsinsirApOpPanQMadBfEOzgDEUdKuoLbLb5nKhIgkXHzujjRg4kqa1oYvKVAWuJezIM4vLlF3t7lQYB_a6T5ZYEKhRtUZ9ketDEUaM0Q">
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container font-label-md text-[11px] px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+              Popular
+            </span>
+</div>
+<div class="p-space-md space-y-space-xs">
+<h3 class="font-title-md text-primary text-[18px]">Belgian Chocolate Truffle Drip</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Size 20cm (8–10 servings)</p>
+<div class="pt-space-xs">
+<span class="font-price-numeric text-primary text-[17px] font-bold">From 320,000 VND</span>
+</div>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<a class="w-full h-[44px] rounded-full bg-[#4C0816] text-white flex items-center justify-center gap-space-xs font-label-lg font-bold shadow-md hover:bg-primary active:translate-y-0.5 transition-all" href="#">
+<span>Choose Size &amp; Order Now</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] flex flex-col justify-between shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300">
+<div class="space-y-space-md">
+<div class="relative w-full aspect-square bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Korean Vintage Buttercream Garden cake decorated with handcrafted pastel buttercream flowers, tender leaf piping, and pearl sprinkles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj-js69BBkc54fg8OLYf366KliQIXHxc4s1L4kJCKU3cqHdWq0_GKT94lFB4ZWm9SQRJIysPJXeQsoIv5yHzoD-J-SG_EUqcdGeDpZ37KFsz7eT7r9XJeyV2IFYf5BxsbkClOgYGSWrvXZJcQHxV1LL1fHxM6lmcB70j3JKHB7Q_Z24ZXy3DWhj37udiV1zWaWN5nxuRrD4Rxs7sN21RsN8UBNVHXCyfVlWZ1jahRol-o5OYzkrEA">
+</div>
+<div class="p-space-md space-y-space-xs">
+<h3 class="font-title-md text-primary text-[18px]">Korean Vintage Buttercream Garden</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Size 16cm (4–6 servings)</p>
+<div class="pt-space-xs">
+<span class="font-price-numeric text-primary text-[17px] font-bold">From 250,000 VND</span>
+</div>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<a class="w-full h-[44px] rounded-full bg-[#4C0816] text-white flex items-center justify-center gap-space-xs font-label-lg font-bold shadow-md hover:bg-primary active:translate-y-0.5 transition-all" href="#">
+<span>Choose Size &amp; Order Now</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] flex flex-col justify-between shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300">
+<div class="space-y-space-md">
+<div class="relative w-full aspect-square bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" data-alt="Grand Royal Princess 2-Tier Crown Cake featuring dual pastel tiers, edible gold flakes, delicate lace piping, and a golden princess tiara topper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOJKxuq_ceZWfeBHbRMuj_Q31S-7xeQ2ktGzTCyev0s-y2AXxn9vW9a2yyaAU9gY-9t5_yA5gUMAtWDMUMChkNCGX-n-Z3gNTmH0zF-OcRcaP6Z_nHG4YrEGkkO0P9VM7s_8-9flfrNuWDAHiuoKVaE7DNjH3PXnMxWLj8zqOixTZoKrwVFOlfgc4NEymCO8ko_KbJks0NzR7bi0bCOG3fVazVV5cfa25-dvZKCyCkmp5QTyZeqLE">
+<span class="absolute top-3 left-3 bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-[11px] px-3 py-1 rounded-full uppercase tracking-wider font-bold">
+              Grand Celebration
+            </span>
+</div>
+<div class="p-space-md space-y-space-xs">
+<h3 class="font-title-md text-primary text-[18px]">Royal Princess 2-Tier Crown Cake</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">2 Tiers (16cm + 22cm)</p>
+<div class="pt-space-xs">
+<span class="font-price-numeric text-primary text-[17px] font-bold">500,000 VND</span>
+</div>
+</div>
+</div>
+<div class="p-space-md pt-0">
+<a class="w-full h-[44px] rounded-full bg-[#4C0816] text-white flex items-center justify-center gap-space-xs font-label-lg font-bold shadow-md hover:bg-primary active:translate-y-0.5 transition-all" href="#">
+<span>Choose Size &amp; Order Now</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Artisanal Quality & Trust Pillars (4 Guarantees) -->
+<section class="w-full bg-surface px-margin-mobile md:px-margin py-space-md mb-space-lg">
+<div class="max-w-[1440px] mx-auto bg-white rounded-2xl border-[1.5px] border-[#7A3E2D] p-space-lg md:p-space-xl shadow-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Pillar 1 -->
+<div class="space-y-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">oven_gen</span>
+</div>
+<h4 class="font-title-md text-primary text-[17px]">Baked Morning of Delivery</h4>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+          Never frozen. Every cake is baked fresh within hours of your delivery time.
+        </p>
+</div>
+<!-- Pillar 2 -->
+<div class="space-y-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">photo_camera</span>
+</div>
+<h4 class="font-title-md text-primary text-[17px]">2 Real QA Photos Guarantee</h4>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+          Decorators send you 2 inspection photos (turntable &amp; boxed) before dispatch.
+        </p>
+</div>
+<!-- Pillar 3 -->
+<div class="space-y-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<h4 class="font-title-md text-primary text-[17px]">100% Transparent Pricing</h4>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+          Zero surprise fees. Cash-roll surprises are 100% passthrough money.
+        </p>
+</div>
+<!-- Pillar 4 -->
+<div class="space-y-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">qr_code_2</span>
+</div>
+<h4 class="font-title-md text-primary text-[17px]">Instant Dynamic VietQR</h4>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+          Fast, fee-free bank transfer verified automatically via banking webhook.
+        </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- 8. Strict Single Consolidated Atelier Footer -->
+<footer class="w-full bg-[#F3EDE9] border-t-2 border-[#7A3E2D] pt-16 pb-8 px-8 mt-16">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter pb-12 border-b border-[#dac1c1]/50">
+<!-- Col 1 (Brand) -->
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#4C0816] text-[26px]">cake</span>
+<span class="font-headline-sm text-[#4C0816] font-bold tracking-tight">CustomCakeAI</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-[14px]">
+          Bespoke Birthday Cakes Made Fresh With Love. Handcrafted daily in Da Nang with fine French and Vietnamese ingredients.
+        </p>
+<div class="flex items-center gap-3 pt-2 text-[#4C0816]">
+<a aria-label="Instagram" class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#7A3E2D]/20 hover:bg-[#4C0816] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</a>
+<a aria-label="Facebook" class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#7A3E2D]/20 hover:bg-[#4C0816] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</a>
+<a aria-label="Chat Concierge" class="w-8 h-8 rounded-full bg-white flex items-center justify-center border border-[#7A3E2D]/20 hover:bg-[#4C0816] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Col 2 (Kitchen) -->
+<div class="space-y-3">
+<h4 class="font-title-md text-[#4C0816] font-bold text-[16px]">Atelier &amp; Kitchen</h4>
+<div class="space-y-2 font-body-md text-on-surface-variant text-[13px]">
+<p class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#7A3E2D] shrink-0 mt-0.5">location_on</span>
+<span>09 Le Duan, Hai Chau District, Da Nang</span>
+</p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#7A3E2D] shrink-0">schedule</span>
+<span>Open daily 07:30 – 21:00</span>
+</p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#7A3E2D] shrink-0">call</span>
+<span>Hotline: 0905-123-456</span>
+</p>
+</div>
+</div>
+<!-- Col 3 (Quick Links) -->
+<div class="space-y-3">
+<h4 class="font-title-md text-[#4C0816] font-bold text-[16px]">Quick Links</h4>
+<ul class="space-y-2 font-body-md text-on-surface-variant text-[13px]">
+<li><a class="hover:text-[#4C0816] transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-[#4C0816] transition-colors" href="#">Cake Menu</a></li>
+<li><a class="hover:text-[#4C0816] transition-colors" href="#">Design Cake</a></li>
+<li><a class="hover:text-[#4C0816] transition-colors" href="#">Track Order</a></li>
+<li><a class="hover:text-[#4C0816] transition-colors" href="#">Delivery &amp; Policies</a></li>
+</ul>
+</div>
+<!-- Col 4 (Payment & Guarantee) -->
+<div class="space-y-3">
+<h4 class="font-title-md text-[#4C0816] font-bold text-[16px]">Payment &amp; Guarantee</h4>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+          Dynamic VietQR &amp; Cash COD. 100% same-day refund if order is rejected.
+        </p>
+<div class="p-3 bg-white rounded-lg border border-[#7A3E2D]/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4C0816] text-[22px]">verified_user</span>
+<span class="font-label-md text-[12px] text-secondary">Verified Artisan Safe Guarantee</span>
+</div>
+</div>
+</div>
+<!-- Centered Copyright -->
+<div class="pt-8 text-center">
+<p class="font-label-md text-on-surface-variant text-[13px]">© 2026 CustomCakeAI Atelier. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- Interactive Dynamic Carousel Logic -->
+<script>
+(function() {
+  const slides = [
+    {
+      bg: '#8B1528', // Deep Raspberry Rose
+      mode: 'dark',
+      price: 'From 250,000 VND',
+      eyebrow: 'ARTISANAL CONFECTIONERY STUDIO • DA NANG'
+    },
+    {
+      bg: '#8B3D14', // Cinnamon Chocolate Brown
+      mode: 'dark',
+      price: 'From 320,000 VND',
+      eyebrow: 'BELGIAN COCOA ATELIER • DA NANG'
+    },
+    {
+      bg: '#F5EBE1', // Soft Warm Vanilla Buttercream Cream
+      mode: 'light',
+      price: 'From 250,000 VND',
+      eyebrow: 'KOREAN VINTAGE STUDIO • DA NANG'
+    }
+  ];
+
+  let currentSlide = 0;
+
+  function applySlide(index) {
+    currentSlide = (index + slides.length) % slides.length;
+    const data = slides[currentSlide];
+    const heroSection = document.getElementById('heroSection');
+    const navWrapper = document.getElementById('navWrapper');
+    const heroPriceBadge = document.getElementById('heroPriceBadge');
+
+    // 1. Background color morphing
+    heroSection.style.backgroundColor = data.bg;
+    if (navWrapper) navWrapper.style.backgroundColor = data.bg;
+
+    // 2. Image cross-fade
+    for (let i = 0; i < 3; i++) {
+      const img = document.getElementById('cakeSlide' + i);
+      if (img) {
+        if (i === currentSlide) {
+          img.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+          img.classList.add('opacity-100', 'scale-100');
+        } else {
+          img.classList.remove('opacity-100', 'scale-100');
+          img.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+        }
+      }
+    }
+
+    // 3. Price badge update
+    if (heroPriceBadge) {
+      heroPriceBadge.textContent = data.price;
+    }
+
+    // 4. Contrast & Theme Adjustments
+    const isLight = data.mode === 'light';
+    const heroHeading = document.querySelector('.hero-heading');
+    const heroSubheading = document.querySelector('.hero-subheading');
+    const heroSocialText = document.querySelector('.hero-social-text');
+    const heroEyebrow = document.querySelector('.hero-eyebrow');
+    const heroPrimaryCta = document.querySelector('.hero-primary-cta');
+    const heroSecondaryCta = document.querySelector('.hero-secondary-cta');
+    const heroNavTitle = document.querySelector('.hero-nav-title');
+    const heroNavSub = document.querySelector('.hero-nav-sub');
+    const heroNavCakeIcon = document.querySelector('.hero-nav-cake-icon');
+    const heroActiveLink = document.querySelector('.hero-active-link');
+    const heroNavLinks = document.querySelectorAll('.hero-nav-link');
+    const heroTopBadge = document.querySelector('.hero-floating-badge-top');
+    const heroControlsPill = document.getElementById('heroControlsPill');
+    const prevBtn = document.getElementById('carouselPrevBtn');
+    const nextBtn = document.getElementById('carouselNextBtn');
+    const heroDoodles = document.querySelectorAll('.hero-doodle');
+    const heroSparkles = document.querySelectorAll('.hero-sparkle');
+
+    if (isLight) {
+      // Deep burgundy text on soft vanilla cream
+      if (heroHeading) { heroHeading.classList.remove('text-white'); heroHeading.classList.add('text-[#4C0816]'); }
+      if (heroSubheading) { heroSubheading.classList.remove('text-white/90'); heroSubheading.classList.add('text-[#544243]'); }
+      if (heroSocialText) { heroSocialText.classList.remove('text-white/90'); heroSocialText.classList.add('text-[#4C0816]'); }
+      if (heroEyebrow) {
+        heroEyebrow.classList.remove('border-white', 'bg-white/10', 'text-white');
+        heroEyebrow.classList.add('border-[#4C0816]', 'bg-[#4C0816]/10', 'text-[#4C0816]');
+      }
+      if (heroPrimaryCta) {
+        heroPrimaryCta.classList.remove('bg-white', 'text-[#4C0816]');
+        heroPrimaryCta.classList.add('bg-[#4C0816]', 'text-white');
+      }
+      if (heroSecondaryCta) {
+        heroSecondaryCta.classList.remove('border-white', 'text-white', 'hover:bg-white/20');
+        heroSecondaryCta.classList.add('border-[#4C0816]', 'text-[#4C0816]', 'hover:bg-[#4C0816]/10');
+      }
+      if (heroNavTitle) { heroNavTitle.classList.remove('text-white'); heroNavTitle.classList.add('text-[#4C0816]'); }
+      if (heroNavSub) { heroNavSub.classList.remove('text-white/80'); heroNavSub.classList.add('text-[#71594d]'); }
+      if (heroNavCakeIcon) { heroNavCakeIcon.classList.remove('text-white'); heroNavCakeIcon.classList.add('text-[#4C0816]'); }
+      if (heroActiveLink) {
+        heroActiveLink.classList.remove('text-white', 'after:bg-white');
+        heroActiveLink.classList.add('text-[#4C0816]', 'after:bg-[#4C0816]');
+      }
+      heroNavLinks.forEach(link => {
+        link.classList.remove('text-white/85', 'hover:text-white');
+        link.classList.add('text-[#544243]', 'hover:text-[#4C0816]');
+      });
+      if (heroTopBadge) {
+        heroTopBadge.classList.remove('bg-white/20', 'text-white', 'border-white');
+        heroTopBadge.classList.add('bg-white/80', 'text-[#4C0816]', 'border-[#7A3E2D]');
+      }
+      if (heroControlsPill) {
+        heroControlsPill.classList.remove('bg-white/20');
+        heroControlsPill.classList.add('bg-[#4C0816]/10');
+      }
+      if (prevBtn) { prevBtn.classList.remove('text-white', 'bg-white/20'); prevBtn.classList.add('text-[#4C0816]', 'bg-[#4C0816]/15'); }
+      if (nextBtn) { nextBtn.classList.remove('text-white', 'bg-white/20'); nextBtn.classList.add('text-[#4C0816]', 'bg-[#4C0816]/15'); }
+      heroDoodles.forEach(doodle => {
+        doodle.classList.remove('stroke-white/20');
+        doodle.classList.add('stroke-[#4C0816]/20');
+      });
+      heroSparkles.forEach(s => {
+        s.classList.remove('text-white/30', 'text-white/25', 'text-white/20');
+        s.classList.add('text-[#4C0816]/30');
+      });
+    } else {
+      // Crisp white on deep raspberry & cinnamon brown
+      if (heroHeading) { heroHeading.classList.remove('text-[#4C0816]'); heroHeading.classList.add('text-white'); }
+      if (heroSubheading) { heroSubheading.classList.remove('text-[#544243]'); heroSubheading.classList.add('text-white/90'); }
+      if (heroSocialText) { heroSocialText.classList.remove('text-[#4C0816]'); heroSocialText.classList.add('text-white/90'); }
+      if (heroEyebrow) {
+        heroEyebrow.classList.remove('border-[#4C0816]', 'bg-[#4C0816]/10', 'text-[#4C0816]');
+        heroEyebrow.classList.add('border-white', 'bg-white/10', 'text-white');
+      }
+      if (heroPrimaryCta) {
+        heroPrimaryCta.classList.remove('bg-[#4C0816]', 'text-white');
+        heroPrimaryCta.classList.add('bg-white', 'text-[#4C0816]');
+      }
+      if (heroSecondaryCta) {
+        heroSecondaryCta.classList.remove('border-[#4C0816]', 'text-[#4C0816]', 'hover:bg-[#4C0816]/10');
+        heroSecondaryCta.classList.add('border-white', 'text-white', 'hover:bg-white/20');
+      }
+      if (heroNavTitle) { heroNavTitle.classList.remove('text-[#4C0816]'); heroNavTitle.classList.add('text-white'); }
+      if (heroNavSub) { heroNavSub.classList.remove('text-[#71594d]'); heroNavSub.classList.add('text-white/80'); }
+      if (heroNavCakeIcon) { heroNavCakeIcon.classList.remove('text-[#4C0816]'); heroNavCakeIcon.classList.add('text-white'); }
+      if (heroActiveLink) {
+        heroActiveLink.classList.remove('text-[#4C0816]', 'after:bg-[#4C0816]');
+        heroActiveLink.classList.add('text-white', 'after:bg-white');
+      }
+      heroNavLinks.forEach(link => {
+        link.classList.remove('text-[#544243]', 'hover:text-[#4C0816]');
+        link.classList.add('text-white/85', 'hover:text-white');
+      });
+      if (heroTopBadge) {
+        heroTopBadge.classList.remove('bg-white/80', 'text-[#4C0816]', 'border-[#7A3E2D]');
+        heroTopBadge.classList.add('bg-white/20', 'text-white', 'border-white');
+      }
+      if (heroControlsPill) {
+        heroControlsPill.classList.remove('bg-[#4C0816]/10');
+        heroControlsPill.classList.add('bg-white/20');
+      }
+      if (prevBtn) { prevBtn.classList.remove('text-[#4C0816]', 'bg-[#4C0816]/15'); prevBtn.classList.add('text-white', 'bg-white/20'); }
+      if (nextBtn) { nextBtn.classList.remove('text-[#4C0816]', 'bg-[#4C0816]/15'); nextBtn.classList.add('text-white', 'bg-white/20'); }
+      heroDoodles.forEach(doodle => {
+        doodle.classList.remove('stroke-[#4C0816]/20');
+        doodle.classList.add('stroke-white/20');
+      });
+      heroSparkles.forEach(s => {
+        s.classList.remove('text-[#4C0816]/30');
+        s.classList.add('text-white/30');
+      });
+    }
+
+    // 5. Update pagination dots
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, idx) => {
+      if (idx === currentSlide) {
+        dot.classList.remove('w-2.5', 'bg-white/40', 'bg-[#4C0816]/30');
+        dot.classList.add('w-8');
+        dot.classList.add(isLight ? 'bg-[#4C0816]' : 'bg-white');
+      } else {
+        dot.classList.remove('w-8', 'bg-white', 'bg-[#4C0816]');
+        dot.classList.add('w-2.5');
+        dot.classList.add(isLight ? 'bg-[#4C0816]/30' : 'bg-white/40');
+      }
+    });
+  }
+
+  window.rotateSlide = function(delta) {
+    applySlide(currentSlide + delta);
+  };
+
+  window.setSlide = function(index) {
+    applySlide(index);
+  };
+
+  // Auto advance every 8 seconds for a relaxed ambient experience
+  setInterval(() => {
+    rotateSlide(1);
+  }, 8000);
+})();
+</script><div id="snapdom-sandbox" data-snapdom-sandbox="true" aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div></body></html>
