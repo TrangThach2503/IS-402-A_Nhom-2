@@ -1,43 +1,34 @@
-# Dependencies
+# Node dependencies & builds
 node_modules/
 */node_modules/
-
-# Build outputs
 dist/
+*/dist/
 dist-ssr/
 build/
 out/
+.oxlintrc.json
 
-# Backend & environments
-backend/
+# Environment variables & secrets
+.env
+*.env
+!.env.example
+
+# Python
 __pycache__/
 */__pycache__/
 *.py[cod]
-.env
-*.env
+*$py.class
 venv/
 .venv/
 
-# Documents & internal working files (Chỉ giữ lại code Frontend)
-.agents/
-.stitch/
-document/
-Document_mẫu/
-Phác thảo giao diện/
-Phát thảo giao diện/
-*.docx
-*.doc
-*.pdf
-*.pptx
-*.xlsx
-*.xls
-Form dang ky nhóm.docx
-Yêu cầu đồ án nhóm.jpg
-Bao_Cao_Phan_Tich_Va_Thiet_Ke_He_Thong_SalesDSS_IS402.docx
-
-# Logs & Editors
-logs/
+# Logs & temp
 *.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS & IDE
 .vscode/
 .idea/
 .DS_Store
