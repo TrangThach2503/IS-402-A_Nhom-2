@@ -1,3 +1,16 @@
+# Documents & Course Requirements (Bảo mật tài liệu nội bộ, không đưa lên GitHub)
+document/
+Document/
+Yêu cầu của giảng viên/
+*giảng viên*/
+*giang vien*/
+*.docx
+*.doc
+*.pdf
+*.pptx
+*.xlsx
+*.xls
+
 # Node dependencies & builds
 node_modules/
 */node_modules/
